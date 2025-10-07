@@ -1,0 +1,40 @@
+.btn:disabled{
+  background-color: gray;
+  border: none;
+  pointer-events: none;
+}
+.preview {
+  height: 150px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 5px;
+  overflow-y: auto;
+}
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+/* .form-switch {
+  position: absolute;
+  right: 12px;
+  padding: 6px;
+  border: 1px solid grey;
+  border-radius: 20px;
+} */
+.alert {
+  height: 60px;
+}
+.dropdown{
+  position: absolute;
+  right: 70px;
+  border-radius: 7px;
+}
+.dropdown-menu li{
+  padding: 2px 5px;
+}
+.dropdown-menu li button{
+  width: 100%;
+  border: 1px solid black;
+}
