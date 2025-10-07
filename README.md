@@ -19,7 +19,7 @@
 <h1>🛠️ Tech Stack</h1>
 
 <ul>
-<li>Frontend: React.js, Bootstrap 5</li>li
+<li>Frontend: React.js, Bootstrap 5</li>
 
 <li>Build Tool: Vite</li>
 
