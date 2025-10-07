@@ -1,16 +1,29 @@
-# React + Vite
+<h1>📝 TextUtility</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p>TextUtility is a simple yet powerful React-based web app that lets users manipulate and format text easily. You can convert text to uppercase, lowercase, title case, remove extra spaces, count words and characters, and much more — all in one place.</p>
 
-Currently, two official plugins are available:
+<h1>🚀 Features</h1>
+<ul>
+<li>🔠 Convert Text – Change to UPPERCASE, lowercase, Title Case, or Sentence Case.</li>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<li>✂️ Remove Extra Spaces – Clean messy text instantly.</li>
 
-## React Compiler
+<li>📊 Text Summary – Get real-time word, character, and reading time stats.</li>
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<li>🎨 Theme Switcher – Choose between Light, Dark, Blue, Green, or Red themes.</li>
 
-## Expanding the ESLint configuration
+<li>⚡ Instant Alerts – Get instant feedback for your actions.</li>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<li>📱 Responsive Design – Works smoothly on desktop, tablet, and mobile devices.</li>
+</ul>
+<h1>🛠️ Tech Stack</h1>
+
+<ul>
+<li>Frontend: React.js, Bootstrap 5</li>li
+
+<li>Build Tool: Vite</li>
+
+<li>Styling: CSS3</li>
+
+<li>Icons: Font Awesome</li>
+</ul>
