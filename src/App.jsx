@@ -5,6 +5,11 @@ import Content from "./components/Content.jsx"
 import Footer from "./components/Footer.jsx"
 import Alert from "./components/Alert.jsx"
 import About from './components/About.jsx'
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light")
@@ -47,16 +52,18 @@ function App() {
     setAlert({message, type})
     setTimeout(() => {
       setAlert(null)
-    }, 2000)
+    }, 3000)
   }
   return(
-    <div>
-      <Navbar mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} />
-      <Content mode={mode} showAlert={showAlert} />  
-      <About />
-      <Footer mode={mode}/>
-    </div>
+    <BrowserRouter>
+        <Navbar mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <Routes>
+          <Route exact path="/" element={<Content mode={mode} showAlert={showAlert} />} />
+          <Route exact path="/about" element={<About/>} />
+        </Routes>
+        <Footer mode={mode}/>
+    </BrowserRouter>
   );
 }
 
