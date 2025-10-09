@@ -4,7 +4,7 @@ export default function Content({mode, showAlert}) {
     const [text, setText] = useState("")
     const myStyle = {
         backgroundColor: (mode === "dark")? "#5050509a" : "transparent",
-        color: (mode === "light" || mode === "success") ? "black" : "white",
+        color: (mode === "dark" || mode === "primary" || mode === "danger") ? "white" : "black",
         border: (mode === "light" || mode === "success")? "1px solid grey": "1px solid white"
     }
 
