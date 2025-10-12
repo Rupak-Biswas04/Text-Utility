@@ -5,7 +5,21 @@ export default function Content({mode, showAlert}) {
     const myStyle = {
         backgroundColor: (mode === "dark")? "#5050509a" : "transparent",
         color: (mode === "dark" || mode === "primary" || mode === "danger") ? "white" : "black",
-        border: (mode === "light" || mode === "success")? "1px solid grey": "1px solid white"
+        border: (mode === "light" || mode === "success")? "1px solid grey": "1px solid white",
+    }
+    function buttonStyle(isDisabled, isClearButton) {
+        if(isDisabled){
+            return {
+                boxShadow: (mode === "primary") ? "0 0 10px blue" : "0 0 10px whitesmoke",
+                opacity: 0.7,
+                cursor: "not-allowed"
+            }
+        }
+        else {
+            return {
+                boxShadow: (isClearButton) ? "0 0 10px 1px red" : (mode === "dark") ? "0 0 10px whitesmoke" : "0 0 10px blue"
+            }
+        }
     }
 
     function handleText(event){
@@ -53,12 +67,12 @@ export default function Content({mode, showAlert}) {
                 <h3 className="mb-4">Enter text below to manipulate</h3>
                 <textarea className="form-control" value={text} onChange={handleText} placeholder="Enter text here" rows="6" style={myStyle}/>
 
-                <button className="btn btn-primary px-4 my-3 me-4" disabled={text === ""} onClick={handleUpperCase}>UPPER CASE</button>
-                <button className="btn btn-primary px-4 my-3 me-4" disabled={text === ""} onClick={handleLowerCase}>lower case</button>
-                <button className="btn btn-primary px-4 my-3 me-4" disabled={text === ""} onClick={handleTitleCase}>Title Case</button>
-                <button className="btn btn-primary px-4 my-3 me-4" disabled={text === ""} onClick={handleSentenceCase}>Sentence case</button>
-                <button className="btn btn-primary px-4 my-3 me-4" disabled={text === ""} onClick={handleExtraSpace}>Remove Extra Space</button>
-                <button className="btn btn-danger px-4 my-3 me-4" disabled={text === ""} onClick={handleClear}>Clear Text</button>
+                <button className="btn btn-primary px-4 my-3 me-5" disabled={text === ""} onClick={handleUpperCase} style={buttonStyle(text === "", false)}>UPPER CASE</button>
+                <button className="btn btn-primary px-4 my-3 me-5" disabled={text === ""} onClick={handleLowerCase} style={buttonStyle(text === "", false)}>lower case</button>
+                <button className="btn btn-primary px-4 my-3 me-5" disabled={text === ""} onClick={handleTitleCase} style={buttonStyle(text === "", false)}>Title Case</button>
+                <button className="btn btn-primary px-4 my-3 me-5" disabled={text === ""} onClick={handleSentenceCase} style={buttonStyle(text === "", false)}>Sentence case</button>
+                <button className="btn btn-primary px-4 my-3 me-5" disabled={text === ""} onClick={handleExtraSpace} style={buttonStyle(text === "", false)}>Remove Extra Space</button>
+                <button className="btn btn-danger px-4 my-3 me-5" disabled={text === ""} onClick={handleClear} style={buttonStyle(text === "", true)}>Clear Text</button>
                 </div>
                 <hr />
                 <div className="my-4">
