@@ -25,7 +25,7 @@ function App() {
     }
     else if(newMode === "primary"){
       setMode("primary")
-      document.body.style.backgroundColor = "#448fffff"
+      document.body.style.backgroundColor = "#143f81ff"
       document.body.style.color = "white"
       showAlert("Theme changed to Blue!", "success")
     }
