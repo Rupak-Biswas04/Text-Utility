@@ -16,13 +16,6 @@
   position: absolute;
   bottom: 0;
 }
-/* .form-switch {
-  position: absolute;
-  right: 12px;
-  padding: 6px;
-  border: 1px solid grey;
-  border-radius: 20px;
-} */
 .alert {
   height: 60px;
 }
@@ -37,4 +30,26 @@
 .dropdown-menu li button{
   width: 100%;
   border: 1px solid black;
+}
+
+@media (max-width: 991px) {
+  .dropdown {
+    position: relative;   
+    left: 0;             
+    width: 48%;          
+    margin-top: 10px;  
+  }
+  .dropdown > button:first-child {
+    width: 30%;          
+  }
+  .dropdown > button:nth-child(2) {
+    width: 25%;          
+  }
+  .dropdown-menu {
+    width: 100%;          
+  }
+  .dropdown-menu li button {
+    width: 100%;         
+    text-align: left;  
+  }
 }
