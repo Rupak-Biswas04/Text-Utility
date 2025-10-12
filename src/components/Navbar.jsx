@@ -40,15 +40,17 @@ function Navbar({mode, toggleMode}) {
                     <div className="dropdown btn-grp ms-3" 
                     style={{border: (mode === "dark")? "1px solid grey" : "1px solid black", borderRadius: "8px"}}>
                         <button type="button" className={`btn btn-${mode}`} style={{width: "120px"}}>{bgColours[mode]}</button>
+                        
                         <button type="button" className={`btn btn-${mode} dropdown-toggle dropdown-toggle-split`} data-bs-toggle="dropdown" aria-expanded="false">
                         <span className="visually-hidden">Toggle Dropdown</span>
                         </button>
+
                         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><button className="btn btn-light" onClick={() => toggleMode("light")}>Light Mode</button></li>
-                        <li><button className="btn btn-dark text-light" onClick={() => toggleMode("dark")}>Dark Mode</button></li>
-                        <li><button className="btn btn-primary text-light" onClick={() => toggleMode("primary")}>Blue</button></li>
-                        <li><button className="btn btn-success text-light" onClick={() => toggleMode("success")}>Green</button></li>
-                        <li><button className="btn btn-danger text-light" onClick={() => toggleMode("danger")}>Red</button></li>
+                            <li><button className="btn btn-light" onClick={() => toggleMode("light")} data-bs-dissmiss="dropdown">Light Mode</button></li>
+                            <li><button className="btn btn-dark text-light" onClick={() => toggleMode("dark")} data-bs-dissmiss="dropdown">Dark Mode</button></li>
+                            <li><button className="btn btn-primary text-light" onClick={() => toggleMode("primary")} data-bs-dissmiss="dropdown">Blue</button></li>
+                            <li><button className="btn btn-success text-light" onClick={() => toggleMode("success")} data-bs-dissmiss="dropdown">Green</button></li>
+                            <li><button className="btn btn-danger text-light" onClick={() => toggleMode("danger")} data-bs-dissmiss="dropdown">Red</button></li>
                         </ul>
                     </div>
                 </div>
