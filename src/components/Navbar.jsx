@@ -6,8 +6,6 @@ function Navbar({mode, toggleMode}) {
         light: "Light Mode",
         dark: "Dark Mode",
         primary: "Blue Mode",
-        success: "Green Mode",
-        danger: "Red Mode"
     };
 
     const location = useLocation();
@@ -18,7 +16,7 @@ function Navbar({mode, toggleMode}) {
     }, [location]);
 
     return (
-        <nav className={`navbar navbar-expand-lg navbar-${(mode === "dark" || mode === "primary" || mode === "success" || mode === "danger")?"dark":"light"} bg-${mode}`}>
+        <nav className={`navbar navbar-expand-lg navbar-${(mode === "dark" || mode === "primary")?"dark":"light"} bg-${mode}`}>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">TextUtility</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -49,8 +47,6 @@ function Navbar({mode, toggleMode}) {
                             <li><button className="btn btn-light" onClick={() => toggleMode("light")} data-bs-dissmiss="dropdown">Light Mode</button></li>
                             <li><button className="btn btn-dark text-light" onClick={() => toggleMode("dark")} data-bs-dissmiss="dropdown">Dark Mode</button></li>
                             <li><button className="btn btn-primary text-light" onClick={() => toggleMode("primary")} data-bs-dissmiss="dropdown">Blue</button></li>
-                            <li><button className="btn btn-success text-light" onClick={() => toggleMode("success")} data-bs-dissmiss="dropdown">Green</button></li>
-                            <li><button className="btn btn-danger text-light" onClick={() => toggleMode("danger")} data-bs-dissmiss="dropdown">Red</button></li>
                         </ul>
                     </div>
                 </div>

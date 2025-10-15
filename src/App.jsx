@@ -29,18 +29,6 @@ function App() {
       document.body.style.color = "white"
       showAlert("Theme changed to Blue!", "success")
     }
-    else if(newMode === "success"){
-       setMode("success")
-      document.body.style.backgroundColor = "#4dd093ff"
-      document.body.style.color = "black"
-      showAlert("Theme changed to Green!", "success")
-    } 
-    else if(newMode === "danger"){
-      setMode("danger")
-      document.body.style.backgroundColor = "#ff5f6fff"
-      document.body.style.color = "white"
-      showAlert("Theme changed to Red!", "success")
-    }
     else{
       setMode("light")
       document.body.style.backgroundColor = "white"
