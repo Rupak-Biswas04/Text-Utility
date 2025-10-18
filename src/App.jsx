@@ -15,24 +15,16 @@ function App() {
   const [mode, setMode] = useState("light")
   const [alert, setAlert] = useState(null)
 
-  function toggleMode(newMode){
+  function toggleMode(){
     console.log(mode)
-    if(newMode === "dark"){
+    if(mode === "light"){
       setMode("dark")
-      document.body.style.backgroundColor = "#2c2c2cff";
-      document.body.style.color = "white";
+      document.body.style.backgroundColor = "#878787ff";
       showAlert("Dark mode enabled", "success")
-    }
-    else if(newMode === "primary"){
-      setMode("primary")
-      document.body.style.backgroundColor = "#143f81ff"
-      document.body.style.color = "white"
-      showAlert("Theme changed to Blue!", "success")
     }
     else{
       setMode("light")
-      document.body.style.backgroundColor = "white"
-      document.body.style.color = "black"
+      document.body.style.backgroundColor = "whitesmoke"
       showAlert("Light mode enabled", "success")
     }
   }
@@ -40,19 +32,22 @@ function App() {
     setAlert({message, type})
     setTimeout(() => {
       setAlert(null)
-    }, 3000)
+    }, 2500)
   }
   return(
     <BrowserRouter>
-        <Navbar mode={mode} toggleMode={toggleMode} />
+      <div className="app-container">
+        <Navbar mode={mode} toggleMode={toggleMode} className="navbar"/>
         <Alert alert={alert} />
-        <Routes>
-          <Route exact path="/" element={<Content mode={mode} showAlert={showAlert} />} />
-          <Route exact path="/about" element={<About/>} />
-        </Routes>
+        <div className="content-wrapper">
+          <Routes>
+            <Route exact path="/" element={<Content mode={mode} showAlert={showAlert} />} />
+            <Route exact path="/about" element={<About mode={mode}/>} />
+          </Routes>
+        </div>
         <Footer mode={mode}/>
+      </div>
     </BrowserRouter>
   );
 }
-
 export default App
