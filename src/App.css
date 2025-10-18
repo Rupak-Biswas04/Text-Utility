@@ -1,55 +1,74 @@
+html, body, #root {
+  height: 100%;
+}
+body{
+  color: white;
+  background-image: url(https://img.freepik.com/free-photo/woman-working-desk-back-view_23-2149713679.jpg?semt=ais_hybrid&w=740&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+}
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.content-wrapper {
+  flex: 1 0 auto;
+  padding: 20px 0;
+  min-height: calc(100vh - 120px);
+}
+.navbar{
+    backdrop-filter: blur(12px) saturate(200%);
+    -webkit-backdrop-filter: blur(12px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  backdrop-filter: blur(2px);
+  text-align: center;
+  padding: 1rem;
+  backdrop-filter: blur(5px) saturate(160%);
+  -webkit-backdrop-filter: blur(5px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in-out;
+}
 .btn:disabled{
   background-color: gray;
   border: none;
   pointer-events: none;
 }
+.form-control::placeholder {
+  color: white;
+  opacity: 0.9;
+}
 .preview {
-  height: 150px;
+  height: 200px;
   border: 1px solid #ffffff;
   border-radius: 5px;
   margin-top: 20px;
   padding: 5px;
   overflow-y: auto;
 }
-.footer {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
 .alert {
   height: 60px;
 }
-.dropdown{
+.form-switch{
   position: absolute;
-  right: 70px;
-  border-radius: 7px;
+  right: 50px;
 }
-.dropdown-menu li{
-  padding: 2px 5px;
-}
-.dropdown-menu li button{
-  width: 100%;
-  border: 1px solid black;
-}
-
-@media (max-width: 991px) {
-  .dropdown {
-    position: relative;   
-    left: 0;             
-    width: 48%;          
-    margin-top: 10px;  
+@media (max-width: 575px) {
+  #navbarNav{
+    height: 110px;
   }
-  .dropdown > button:first-child {
-    width: 30%;          
-  }
-  .dropdown > button:nth-child(2) {
-    width: 25%;          
-  }
-  .dropdown-menu {
-    width: 100%;          
-  }
-  .dropdown-menu li button {
-    width: 100%;         
-    text-align: left;  
+  .form-switch{
+    position: absolute;
+    left: 1rem;
   }
 }
