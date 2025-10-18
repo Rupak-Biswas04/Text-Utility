@@ -5,9 +5,11 @@ function Navbar({mode, toggleMode}) {
     const bgColours = {
         light: "Light Mode",
         dark: "Dark Mode",
-        primary: "Blue Mode",
     };
-
+    const navbarStyling = {
+        backgroundColor: mode === "dark" ? "rgba(33, 37, 41, 0.2)" : "rgba(255, 255, 255, 0.1)"
+    }
+    
     const location = useLocation();
     useEffect(() => {
         document.title = 
@@ -16,7 +18,7 @@ function Navbar({mode, toggleMode}) {
     }, [location]);
 
     return (
-        <nav className={`navbar navbar-expand-lg navbar-${(mode === "dark" || mode === "primary")?"dark":"light"} bg-${mode}`}>
+        <nav className="navbar navbar-expand-sm navbar-dark" style={navbarStyling}>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">TextUtility</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -34,20 +36,14 @@ function Navbar({mode, toggleMode}) {
                         </li>
                     </ul>
 
-                    {/* Dropdown */}
-                    <div className="dropdown btn-grp ms-3" 
-                    style={{border: (mode === "dark")? "1px solid grey" : "1px solid black", borderRadius: "8px"}}>
-                        <button type="button" className={`btn btn-${mode}`} style={{width: "120px"}}>{bgColours[mode]}</button>
-                        
-                        <button type="button" className={`btn btn-${mode} dropdown-toggle dropdown-toggle-split`} data-bs-toggle="dropdown" aria-expanded="false">
-                        <span className="visually-hidden">Toggle Dropdown</span>
-                        </button>
-
-                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><button className="btn btn-light" onClick={() => toggleMode("light")} data-bs-dissmiss="dropdown">Light Mode</button></li>
-                            <li><button className="btn btn-dark text-light" onClick={() => toggleMode("dark")} data-bs-dissmiss="dropdown">Dark Mode</button></li>
-                            <li><button className="btn btn-primary text-light" onClick={() => toggleMode("primary")} data-bs-dissmiss="dropdown">Blue</button></li>
-                        </ul>
+                    <div className="form-check form-switch" onClick={toggleMode} 
+                    style={{color: "white"}}>
+                        <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault" style={{
+                            border: (mode == "light") ? "1px solid rgba(255, 255, 255, 0.3)" : "1px solid rgba(255, 255, 255, 0.6)",
+                            padding: "0 10px",
+                            borderRadius: "7px"
+                            }}>{(mode == "light") ? "Light Mode" : "Dark Mode"}</label>
                     </div>
                 </div>
             </div>
